@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script src="webrtc.js"></script>
+		<script src="jquery-1.9.1.js"></script>
+    </head>
+
+    <body>
+        <video id="localVideo" autoplay muted style="width:40%;"></video>
+        <video id="remoteVideo" autoplay style="width:40%;"></video>
+		<canvas id="canvas"></canvas>
+        <br />
+
+        <input type="button" id="start" onclick="start(true)" value="Start Video"></input>
+		<input type="button" id="pauseCamera" value="Pause Camera"></input>
+		<input type="button" id="pauseMic" value="Mute"></input>
+		<input type="button" onclick="takeLocalPicture()"  value="Take local Picture"></input>
+		<input type="button" onclick="takeRemotePicture()"  value="Take remote Picture"></input>
+
+        <script type="text/javascript">
+            pageReady();
+		$('#pauseCamera').click(function() {
+			if ($(this).hasClass("stop")) {
+				$(this).removeClass("stop");
+				$(this).attr("value", "Pause Camera");
+			} else {
+				$(this).addClass("stop");
+				$(this).attr("value", "Unpause Camera");
+			}
+			pauseCamera();
+		});
+		
+		$('#pauseMic').click(function() {
+			if ($(this).hasClass("stop")) {
+				$(this).removeClass("stop");
+				$(this).attr("value","Mute");
+			} else {
+				$(this).addClass("stop");
+				$(this).attr("value","Unmute");
+			}
+			pauseMic();
+		});
+			
+        </script>
+    </body>
+</html>
