@@ -1,3 +1,9 @@
+This is sample webRTC application which I cloned from Github and did following enhancements to demo in my webRTC tech talk at Exilesoft.  The goal of this talk was to make awareness of the webRTC technology.  
+
+* Added Video pause and start options
+* Added Audio mute and on option
+* Added Capturing snapshot option
+
 WebRTC Example
 ==============
 
